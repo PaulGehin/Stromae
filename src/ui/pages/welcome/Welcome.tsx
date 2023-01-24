@@ -1,21 +1,17 @@
-import { useParams } from "react-router-dom";
 import "./Welcome.scss";
+import {routes} from "../../routing";
+import {Route} from "type-route";
 
-type WelcomeParams = {
-  survey?: string;
-};
+function Welcome(props: { route: Route<typeof routes.app> }) {
+    const {route} = props
+    const {survey} = route.params;
+    console.log({survey});
 
-interface WelcomeProps {}
-
-function Welcome(props: WelcomeProps) {
-  let { survey } = useParams<WelcomeParams>();
-  console.log({ survey });
-
-  return (
-    <div data-id="welcome" className="stromae-welcome">
-      Welcome
-    </div>
-  );
+    return (
+        <div data-id="welcome" className="stromae-welcome">
+            Welcome {survey}
+        </div>
+    );
 }
 
 export default Welcome;

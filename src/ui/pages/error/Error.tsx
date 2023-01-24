@@ -1,8 +1,4 @@
-import { useRouteError } from "react-router-dom";
-
 function Error() {
-  const error = useRouteError();
-  console.error(error);
   return (
     <div data-id="error-page" id="stromae-error-page">
       <h1>Oops!</h1>

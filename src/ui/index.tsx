@@ -2,12 +2,15 @@ import {StrictMode} from "react";
 import {createRoot} from "react-dom/client";
 import {App} from "./components";
 import reportWebVitals from "./reportWebVitals";
+import {RouteProvider} from "./routing";
 
 createRoot(
     document.getElementById("root") as HTMLElement
 ).render(
     <StrictMode>
-        <App/>
+        <RouteProvider>
+            <App/>
+        </RouteProvider>
     </StrictMode>
 );
 
